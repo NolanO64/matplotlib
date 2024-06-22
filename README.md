@@ -26,7 +26,7 @@ The tool we use to perform coverage analysis is `Coverage.py`.
 
 **Execution:**
 
-``sh
+```sh
 coverage run -m pytest
 coverage report
 ```
@@ -50,7 +50,8 @@ coverage report
 <Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
 
 
-<Provide a screenshot of the coverage results output by the instrumentation>
+<img width="839" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/55b5352a-1a98-45b3-b36f-86bb8ac35b58">
+
 
 
 `second function`
