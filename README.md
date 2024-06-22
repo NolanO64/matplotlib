@@ -34,7 +34,7 @@ coverage report
 ```
 
 
-**Screenshot of Coverage Results: **
+**Screenshot of Coverage Results:**
 
 
 <img width="655" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/9a1e39c5-4be8-4dc4-8461-19236c096539">
@@ -58,15 +58,13 @@ coverage report
 
 
 
-`second function`
+`lib/matplotlib/legend.py/set_bbox_to_anchor`
 
-
-<Provide the same kind of information provided for Function 1>
 
 <Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
 
+<img width="836" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/b1c402f8-08cc-4ca6-ae12-184d6982b0ae">
 
-<Provide a screenshot of the coverage results output by the instrumentation>
 
 **Moegiez Bhatti**
 
