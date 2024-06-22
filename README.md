@@ -4,16 +4,16 @@
 ## Project chosen
 
 
-Name: <TODO>
+Name: matplotlib
 
 
-URL: <TODO>
+URL: [<TODO>](https://github.com/matplotlib/matplotlib)
 
 
-Number of lines of code and the tool used to count it: <TODO>
+Number of lines of code and the tool used to count it: Lizard - 229 KOC
 
 
-Programming language: <TODO>
+Programming language: Python
 
 
 ## Coverage measurement
@@ -22,22 +22,29 @@ Programming language: <TODO>
 ### Existing tool
 
 
-<Inform the name of the existing tool that was executed and how it was executed>
+The tool we use to perform coverage analysis is `Coverage.py`.
 
+**Execution:**
 
-<Show the coverage results provided by the existing tool with a screenshot>
+``sh
+coverage run -m pytest
+coverage report
+```
+
+**Screenshot of Coverage Results: **
+
+<img width="655" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/9a1e39c5-4be8-4dc4-8461-19236c096539">
+
 
 
 ### Your own coverage tool
 
 
-<The following is supposed to be repeated for each group member>
+
+**Nolan Otam**
 
 
-<Group member name>
-
-
-<Function 1 name>
+`csd`
 
 
 <Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
@@ -46,10 +53,82 @@ Programming language: <TODO>
 <Provide a screenshot of the coverage results output by the instrumentation>
 
 
-<Function 2 name>
+`second function`
 
 
 <Provide the same kind of information provided for Function 1>
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+**Moegiez Bhatti**
+
+
+`first function`
+
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+
+`second function`
+
+
+<Provide the same kind of information provided for Function 1>
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+**Narek Darbinyan**
+
+
+`first function`
+
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+
+`second function`
+
+
+<Provide the same kind of information provided for Function 1>
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+**Eric Pătrașcu**
+
+
+`first function`
+
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+
+`second function`
+
+
+<Provide the same kind of information provided for Function 1>
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
 
 
 ## Coverage improvement
