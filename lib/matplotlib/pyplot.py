@@ -358,6 +358,28 @@ def _get_backend_mod() -> type[matplotlib.backend_bases._Backend]:
         switch_backend(rcParams._get("backend"))
     return cast(type[matplotlib.backend_bases._Backend], _backend_mod)
 
+auto_backend_sentinel_id = 1
+fallback_to_agg_id = 2
+interactive_framework_check_id = 3
+invalid_interactive_framework_id = 4
+new_figure_manager_none_id = 5
+show_manager_class_id = 6
+
+coverage_info = {
+    auto_backend_sentinel_id: False,
+    fallback_to_agg_id: False,
+    interactive_framework_check_id: False,
+    invalid_interactive_framework_id: False,
+    new_figure_manager_none_id: False,
+    show_manager_class_id: False
+}
+def print_coverage_info():
+    """
+    Print the coverage information.
+    """
+    print("Coverage Information:")
+    for branch_id, taken in coverage_info.items():
+        print(f"Branch ID switch_backend {branch_id}: {'Taken' if taken else 'Not Taken'}")
 
 def switch_backend(newbackend: str) -> None:
     """
@@ -381,6 +403,7 @@ def switch_backend(newbackend: str) -> None:
     import matplotlib.backends
 
     if newbackend is rcsetup._auto_backend_sentinel:
+        coverage_info[auto_backend_sentinel_id] = True
         current_framework = cbook._get_running_interactive_framework()
 
         if (current_framework and
@@ -406,6 +429,7 @@ def switch_backend(newbackend: str) -> None:
         else:
             # Switching to Agg should always succeed; if it doesn't, let the
             # exception propagate out.
+            coverage_info[fallback_to_agg_id] = True
             switch_backend("agg")
             rcParamsOrig["backend"] = "agg"
             return
@@ -417,9 +441,11 @@ def switch_backend(newbackend: str) -> None:
 
     required_framework = canvas_class.required_interactive_framework
     if required_framework is not None:
+        coverage_info[interactive_framework_check_id] = True
         current_framework = cbook._get_running_interactive_framework()
         if (current_framework and required_framework
                 and current_framework != required_framework):
+            coverage_info[invalid_interactive_framework_id] = True
             raise ImportError(
                 "Cannot load backend {!r} which requires the {!r} interactive "
                 "framework, as {!r} is currently running".format(
@@ -444,6 +470,7 @@ def switch_backend(newbackend: str) -> None:
     # update backend_mod accordingly; also, per-backend customization of
     # draw_if_interactive is disabled.
     if new_figure_manager is None:
+        coverage_info[new_figure_manager_none_id] = True
 
         def new_figure_manager_given_figure(num, figure):
             return canvas_class.new_manager(figure, num)
@@ -477,6 +504,7 @@ def switch_backend(newbackend: str) -> None:
     if (show is None
             or (manager_pyplot_show is not None
                 and manager_pyplot_show != base_pyplot_show)):
+        coverage_info[show_manager_class_id] = True
         if not manager_pyplot_show:
             raise ValueError(
                 f"Backend {newbackend} defines neither FigureCanvas.manager_class nor "
@@ -519,6 +547,7 @@ def switch_backend(newbackend: str) -> None:
 
     # Make sure the repl display hook is installed in case we become interactive.
     install_repl_displayhook()
+    print_coverage_info()
 
 
 def _warn_if_gui_out_of_main_thread() -> None:
