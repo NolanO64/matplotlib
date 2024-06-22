@@ -51,8 +51,7 @@ coverage report
 `lib/matplotlib/mlab.py/csd`
 
 
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
-
+Link to commit : [bd28b0f5800651ccd3243a970f67dcdffe6dfbeb](https://github.com/NolanO64/matplotlib/commit/bd28b0f5800651ccd3243a970f67dcdffe6dfbeb)
 
 <img width="839" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/55b5352a-1a98-45b3-b36f-86bb8ac35b58">
 
@@ -60,8 +59,7 @@ coverage report
 
 `lib/matplotlib/legend.py/set_bbox_to_anchor`
 
-
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+Link to commit : [bd28b0f5800651ccd3243a970f67dcdffe6dfbeb](https://github.com/NolanO64/matplotlib/commit/bd28b0f5800651ccd3243a970f67dcdffe6dfbeb)
 
 <img width="836" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/b1c402f8-08cc-4ca6-ae12-184d6982b0ae">
 
