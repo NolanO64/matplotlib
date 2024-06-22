@@ -14,6 +14,46 @@ from matplotlib import _api
 
 __all__ = ['stackplot']
 
+# Unique IDs for conditional branches
+baseline_check_id = 1
+zero_baseline_id = 2
+sym_baseline_id = 3
+wiggle_baseline_id = 4
+weighted_wiggle_baseline_id = 5
+
+# Create a dictionary to hold coverage information
+coverage_info = {
+    baseline_check_id: False,
+    zero_baseline_id: False,
+    sym_baseline_id: False,
+    wiggle_baseline_id: False,
+    weighted_wiggle_baseline_id: False
+}
+
+# Unique IDs for conditional branches
+baseline_check_id = 1
+zero_baseline_id = 2
+sym_baseline_id = 3
+wiggle_baseline_id = 4
+weighted_wiggle_baseline_id = 5
+
+# Create a dictionary to hold coverage information
+coverage_info = {
+    baseline_check_id: False,
+    zero_baseline_id: False,
+    sym_baseline_id: False,
+    wiggle_baseline_id: False,
+    weighted_wiggle_baseline_id: False
+}
+
+def print_coverage_info():
+    """
+    Print the coverage information.
+    """
+    print("Coverage Information:")
+    for branch_id, taken in coverage_info.items():
+        print(f"Branch ID {branch_id}: {'Taken' if taken else 'Not Taken'}")
+
 
 def stackplot(axes, x, *args,
               labels=(), colors=None, hatch=None, baseline='zero',
@@ -97,19 +137,23 @@ def stackplot(axes, x, *args,
     _api.check_in_list(['zero', 'sym', 'wiggle', 'weighted_wiggle'],
                        baseline=baseline)
     if baseline == 'zero':
+        coverage_info[zero_baseline_id] = True
         first_line = 0.
 
     elif baseline == 'sym':
+        coverage_info[sym_baseline_id] = True
         first_line = -np.sum(y, 0) * 0.5
         stack += first_line[None, :]
 
     elif baseline == 'wiggle':
+        coverage_info[wiggle_baseline_id] = True
         m = y.shape[0]
         first_line = (y * (m - 0.5 - np.arange(m)[:, None])).sum(0)
         first_line /= -m
         stack += first_line
 
     elif baseline == 'weighted_wiggle':
+        coverage_info[weighted_wiggle_baseline_id] = True
         total = np.sum(y, 0)
         # multiply by 1/total (or zero) to avoid infinities in the division:
         inv_total = np.zeros_like(total)
@@ -141,4 +185,8 @@ def stackplot(axes, x, *args,
                                    hatch=next(hatch),
                                    label=next(labels, None),
                                    **kwargs))
+    #printing coverage info
+    print_coverage_info()
+
     return r
+
