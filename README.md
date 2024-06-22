@@ -7,7 +7,7 @@
 Name: matplotlib
 
 
-URL: [<TODO>](https://github.com/matplotlib/matplotlib)
+URL: https://github.com/matplotlib/matplotlib
 
 
 Number of lines of code and the tool used to count it: Lizard - 229 KOC
@@ -24,14 +24,18 @@ Programming language: Python
 
 The tool we use to perform coverage analysis is `Coverage.py`.
 
+
 **Execution:**
+
 
 ```sh
 coverage run -m pytest
 coverage report
 ```
 
+
 **Screenshot of Coverage Results: **
+
 
 <img width="655" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/9a1e39c5-4be8-4dc4-8461-19236c096539">
 
@@ -44,7 +48,7 @@ coverage report
 **Nolan Otam**
 
 
-`csd`
+`lib/matplotlib/mlab.py/csd`
 
 
 <Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
