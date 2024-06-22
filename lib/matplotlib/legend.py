@@ -338,6 +338,16 @@ _legend_kw_set_loc_st = (
                          best=_loc_doc_best, outside=_outside_doc))
 _docstring.interpd.update(_legend_kw_set_loc_doc=_legend_kw_set_loc_st)
 
+branch_coverage = {
+    "set_bbox_to_anchor_1": False,  # if branch for bbox is None
+    "set_bbox_to_anchor_2": False,  # if branch for isinstance(bbox, BboxBase)
+    "set_bbox_to_anchor_3": False,  # else branch
+    "set_bbox_to_anchor_4": False   # if branch for l == 2
+}
+
+def print_coverage():
+    for branch, hit in branch_coverage.items():
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
 
 class Legend(Artist):
     """
@@ -1096,6 +1106,8 @@ class Legend(Artist):
         else:
             return self._bbox_to_anchor
 
+
+
     def set_bbox_to_anchor(self, bbox, transform=None):
         """
         Set the bbox that the legend will be anchored to.
@@ -1117,17 +1129,21 @@ class Legend(Artist):
             will use a transform to the bounding box of the parent.
         """
         if bbox is None:
+            branch_coverage["set_bbox_to_anchor_1"] = True
             self._bbox_to_anchor = None
             return
         elif isinstance(bbox, BboxBase):
+            branch_coverage["set_bbox_to_anchor_2"] = True
             self._bbox_to_anchor = bbox
         else:
+            branch_coverage["set_bbox_to_anchor_3"] = True
             try:
                 l = len(bbox)
             except TypeError as err:
                 raise ValueError(f"Invalid bbox: {bbox}") from err
 
             if l == 2:
+                branch_coverage["set_bbox_to_anchor_4"] = True
                 bbox = [bbox[0], bbox[1], 0, 0]
 
             self._bbox_to_anchor = Bbox.from_bounds(*bbox)
@@ -1135,9 +1151,10 @@ class Legend(Artist):
         if transform is None:
             transform = BboxTransformTo(self.parent.bbox)
 
-        self._bbox_to_anchor = TransformedBbox(self._bbox_to_anchor,
-                                               transform)
+        self._bbox_to_anchor = TransformedBbox(self._bbox_to_anchor, transform)
         self.stale = True
+
+        print_coverage()
 
     def _get_anchored_bbox(self, loc, bbox, parentbbox, renderer):
         """
