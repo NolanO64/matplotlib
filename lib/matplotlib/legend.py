@@ -349,6 +349,7 @@ branch_coverage = {
 }
 
 def print_coverage():
+    print(f"Coverage for set_bbox_to_anchor():")
     for branch, hit in branch_coverage.items():
         print(f"{branch} was {'hit' if hit else 'not hit'}")
 

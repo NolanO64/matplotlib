@@ -52,6 +52,17 @@ from .path import Path
 
 DEBUG = False
 
+branch_coverage = {
+    "ax2_ax1_swap": False,
+    "ay2_ay1_swap": False,
+    "bx2_bx1_swap": False,
+    "by2_by1_swap": False,
+}
+
+def print_coverage():
+    print(f"Coverage for overlaps():")
+    for branch, hit in branch_coverage.items():
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
 
 def _make_str_method(*args, **kwargs):
     """
@@ -410,13 +421,21 @@ class BboxBase(TransformNode):
         ax1, ay1, ax2, ay2 = self.extents
         bx1, by1, bx2, by2 = other.extents
         if ax2 < ax1:
+            branch_coverage["ax2_ax1_swap"] = True
             ax2, ax1 = ax1, ax2
+
         if ay2 < ay1:
+            branch_coverage["ay2_ay1_swap"] = True
             ay2, ay1 = ay1, ay2
+
         if bx2 < bx1:
+            branch_coverage["bx2_bx1_swap"] = True
             bx2, bx1 = bx1, bx2
+
         if by2 < by1:
+            branch_coverage["by2_by1_swap"] = True
             by2, by1 = by1, by2
+        print_coverage()
         return ax1 <= bx2 and bx1 <= ax2 and ay1 <= by2 and by1 <= ay2
 
     def fully_containsx(self, x):
