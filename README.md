@@ -51,17 +51,17 @@ coverage report
 `lib/matplotlib/mlab.py/csd`
 
 
-Link to commit : [bd28b0f5800651ccd3243a970f67dcdffe6dfbeb](https://github.com/NolanO64/matplotlib/commit/bd28b0f5800651ccd3243a970f67dcdffe6dfbeb)
+Link to commit : [0c42901b4508e1f3a0c2d75334fb2d7f2397878d](https://github.com/NolanO64/matplotlib/commit/0c42901b4508e1f3a0c2d75334fb2d7f2397878d)
 
-<img width="839" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/55b5352a-1a98-45b3-b36f-86bb8ac35b58">
+<img width="1244" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/baa13e0a-6869-4120-9b06-15f034325faf">
 
 
 
 `lib/matplotlib/legend.py/set_bbox_to_anchor`
 
-Link to commit : [bd28b0f5800651ccd3243a970f67dcdffe6dfbeb](https://github.com/NolanO64/matplotlib/commit/bd28b0f5800651ccd3243a970f67dcdffe6dfbeb)
+Link to commit : [0c42901b4508e1f3a0c2d75334fb2d7f2397878d](https://github.com/NolanO64/matplotlib/commit/0c42901b4508e1f3a0c2d75334fb2d7f2397878d)
 
-<img width="836" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/b1c402f8-08cc-4ca6-ae12-184d6982b0ae">
+<img width="1240" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/041fd39b-bdf9-40be-a9bf-008b77505bdc">
 
 
 **Moegiez Bhatti**
