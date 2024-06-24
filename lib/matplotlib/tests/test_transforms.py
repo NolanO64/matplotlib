@@ -1072,3 +1072,28 @@ def test_interval_contains_open():
     assert not mtransforms.interval_contains_open((0, 1), -1)
     assert not mtransforms.interval_contains_open((0, 1), 2)
     assert mtransforms.interval_contains_open((1, 0), 0.5)
+
+def test_overlaps_no_swap():
+    bbox1 = mtransforms.Bbox.from_extents(0, 0, 1, 1)
+    bbox2 = mtransforms.Bbox.from_extents(0.5, 0.5, 1.5, 1.5)
+    assert bbox1.overlaps(bbox2) == True
+
+def test_overlaps_ax2_ax1_swap():
+    bbox1 = mtransforms.Bbox.from_extents(1, 0, 0, 1)
+    bbox2 = mtransforms.Bbox.from_extents(0.5, 0.5, 1.5, 1.5)
+    assert bbox1.overlaps(bbox2) == True
+
+def test_overlaps_ay2_ay1_swap():
+    bbox1 = mtransforms.Bbox.from_extents(0, 1, 1, 0)
+    bbox2 = mtransforms.Bbox.from_extents(0.5, 0.5, 1.5, 1.5)
+    assert bbox1.overlaps(bbox2) == True
+
+def test_overlaps_bx2_bx1_swap():
+    bbox1 = mtransforms.Bbox.from_extents(0, 0, 1, 1)
+    bbox2 = mtransforms.Bbox.from_extents(1.5, 0.5, 0.5, 1.5)
+    assert bbox1.overlaps(bbox2) == True
+
+def test_overlaps_by2_by1_swap():
+    bbox1 = mtransforms.Bbox.from_extents(0, 0, 1, 1)
+    bbox2 = mtransforms.Bbox.from_extents(0.5, 1.5, 1.5, 0.5)
+    assert bbox1.overlaps(bbox2) == True
