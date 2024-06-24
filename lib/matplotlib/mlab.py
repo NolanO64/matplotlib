@@ -514,10 +514,14 @@ def psd(x, NFFT=None, Fs=None, detrend=None, window=None,
     return Pxx.real, freqs
 
 branch_coverage = {
-    "csd_1": False,  # if branch for NFFT is None
-    "csd_2": False,  # if branch for Pxy.ndim == 2
-    "csd_3": False   # if branch for Pxy.shape[1] > 1
+    "NFFT_is_None": False,        # if branch for NFFT is None
+    "NFFT_is_not_None": False,    # else branch for NFFT is not None
+    "Pxy_ndim_is_2": False,       # if branch for Pxy.ndim == 2
+    "Pxy_ndim_is_not_2": False,   # else branch for Pxy.ndim != 2
+    "Pxy_shape1_gt_1": False,     # if branch for Pxy.shape[1] > 1
+    "Pxy_shape1_le_1": False      # else branch for Pxy.shape[1] <= 1
 }
+
 
 @_docstring.dedent_interpd
 def csd(x, y, NFFT=None, Fs=None, detrend=None, window=None,
@@ -567,9 +571,11 @@ def csd(x, y, NFFT=None, Fs=None, detrend=None, window=None,
     --------
     psd : equivalent to setting ``y = x``.
     """
-    if NFFT is None:
-        branch_coverage["csd_1"] = True
+    if NFFT is None: 
+        branch_coverage["NFFT_is_None"] = True
         NFFT = 256
+    else:
+        branch_coverage["NFFT_is_not_None"] = True  # New branch to track else part
     Pxy, freqs, _ = _spectral_helper(x=x, y=y, NFFT=NFFT, Fs=Fs,
                                      detrend_func=detrend, window=window,
                                      noverlap=noverlap, pad_to=pad_to,
@@ -577,13 +583,15 @@ def csd(x, y, NFFT=None, Fs=None, detrend=None, window=None,
                                      mode='psd')
 
     if Pxy.ndim == 2:
-        branch_coverage["csd_2"] = True
+        branch_coverage["Pxy_ndim_is_2"] = True
         if Pxy.shape[1] > 1:
-            branch_coverage["csd_3"] = True
+            branch_coverage["Pxy_shape1_gt_1"] = True
             Pxy = Pxy.mean(axis=1)
         else:
             Pxy = Pxy[:, 0]
-
+            branch_coverage["Pxy_shape1_le_1"] = True
+    else:
+        branch_coverage["Pxy_ndim_is_not_2"] = True  # New branch to track else part
     print_coverage()
     return Pxy, freqs
 

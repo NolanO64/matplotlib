@@ -339,10 +339,13 @@ _legend_kw_set_loc_st = (
 _docstring.interpd.update(_legend_kw_set_loc_doc=_legend_kw_set_loc_st)
 
 branch_coverage = {
-    "set_bbox_to_anchor_1": False,  # if branch for bbox is None
-    "set_bbox_to_anchor_2": False,  # if branch for isinstance(bbox, BboxBase)
-    "set_bbox_to_anchor_3": False,  # else branch
-    "set_bbox_to_anchor_4": False   # if branch for l == 2
+    "bbox_is_None": False,              # if branch for bbox is None
+    "bbox_is_BboxBase_instance": False, # elif branch for bbox is an instance of BboxBase
+    "bbox_is_other": False,             # else branch for bbox is not an instance of BboxBase
+    "bbox_length_is_2": False,          # if branch for length of bbox is 2
+    "bbox_length_is_not_2": False,      # else branch for length of bbox is not 2
+    "transform_is_None": False,         # if branch for transform is None
+    "transform_is_not_None": False      # else branch for transform is not None
 }
 
 def print_coverage():
@@ -1129,27 +1132,32 @@ class Legend(Artist):
             will use a transform to the bounding box of the parent.
         """
         if bbox is None:
-            branch_coverage["set_bbox_to_anchor_1"] = True
+            branch_coverage["bbox_is_None"] = True
             self._bbox_to_anchor = None
             return
         elif isinstance(bbox, BboxBase):
-            branch_coverage["set_bbox_to_anchor_2"] = True
+            branch_coverage["bbox_is_BboxBase_instance"] = True
             self._bbox_to_anchor = bbox
         else:
-            branch_coverage["set_bbox_to_anchor_3"] = True
+            branch_coverage["bbox_is_other"] = True
             try:
                 l = len(bbox)
             except TypeError as err:
                 raise ValueError(f"Invalid bbox: {bbox}") from err
 
             if l == 2:
-                branch_coverage["set_bbox_to_anchor_4"] = True
+                branch_coverage["bbox_length_is_2"] = True
                 bbox = [bbox[0], bbox[1], 0, 0]
+            else:
+                branch_coverage["bbox_length_is_not_2"] = True
 
             self._bbox_to_anchor = Bbox.from_bounds(*bbox)
 
         if transform is None:
+            branch_coverage["transform_is_None"] = True
             transform = BboxTransformTo(self.parent.bbox)
+        else:
+            branch_coverage["transform_is_not_None"] = True
 
         self._bbox_to_anchor = TransformedBbox(self._bbox_to_anchor, transform)
         self.stale = True
