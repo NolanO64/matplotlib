@@ -54,9 +54,15 @@ DEBUG = False
 
 branch_coverage = {
     "ax2_ax1_swap": False,
+    "ax2_ax1_no_swap": False,
     "ay2_ay1_swap": False,
+    "ay2_ay1_no_swap": False,
     "bx2_bx1_swap": False,
+    "bx2_bx1_no_swap": False,
     "by2_by1_swap": False,
+    "by2_by1_no_swap": False,
+    "logical_check_passed": False,
+    "logical_check_failed": False
 }
 
 def print_coverage():
@@ -423,20 +429,35 @@ class BboxBase(TransformNode):
         if ax2 < ax1:
             branch_coverage["ax2_ax1_swap"] = True
             ax2, ax1 = ax1, ax2
+        else:
+            branch_coverage["ax2_ax1_no_swap"] = True
 
         if ay2 < ay1:
             branch_coverage["ay2_ay1_swap"] = True
             ay2, ay1 = ay1, ay2
+        else:
+            branch_coverage["ay2_ay1_no_swap"] = True
 
         if bx2 < bx1:
             branch_coverage["bx2_bx1_swap"] = True
             bx2, bx1 = bx1, bx2
+        else:
+            branch_coverage["bx2_bx1_no_swap"] = True
 
         if by2 < by1:
             branch_coverage["by2_by1_swap"] = True
             by2, by1 = by1, by2
+        else:
+            branch_coverage["by2_by1_no_swap"] = True
+
+        logical_check = ax1 <= bx2 and bx1 <= ax2 and ay1 <= by2 and by1 <= ay2
+        if logical_check:
+            branch_coverage["logical_check_passed"] = True
+        else:
+            branch_coverage["logical_check_failed"] = True
+
         print_coverage()
-        return ax1 <= bx2 and bx1 <= ax2 and ay1 <= by2 and by1 <= ay2
+        return logical_check
 
     def fully_containsx(self, x):
         """
