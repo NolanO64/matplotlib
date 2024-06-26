@@ -180,9 +180,11 @@ The branch coverage improved from 57% to 100% because new tests were added. Thes
 
 ### Overall
 
+**Old global coverage results**
 
-<Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)>
+<img width="655" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/9a1e39c5-4be8-4dc4-8461-19236c096539">
 
+**New global coverage results**
 
 <Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>
 
@@ -191,3 +193,11 @@ The branch coverage improved from 57% to 100% because new tests were added. Thes
 
 
 <Write what each group member did>
+
+
+**Nolan Otam**
+
+- Branch coverage analysis of `lib/matplotlib/transforms.py/overlaps`
+- Added tests to improve branch coverage of `lib/matplotlib/transforms.py/overlaps`
+- Branch coverage analysis of `lib/matplotlib/legend.py/set_bbox_to_anchor`
+- Added tests to improve branch coverage of `lib/matplotlib/legend.py/set_bbox_to_anchor`
