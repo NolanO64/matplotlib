@@ -184,7 +184,8 @@ The branch coverage improved from 57% to 100% because new tests were added. Thes
 
 **Test for** `lib/matplotlib/stackplot.py`
 
-Link to commit : [6698edcfe28dce1e0f42a7c432e56a5a21fdd45a](https://github.com/NolanO64/matplotlib/commit/6698edcfe28dce1e0f42a7c432e56a5a21fdd45a#diff-9c604e3ebce77d5db7e7eb4a4f92a08a8fab56faa8646ecf952ed0a3ad7a233c)
+Link to commit : [[[6698edcfe28dce1e0f42a7c432e56a5a21fdd45a](https://github.com/NolanO64/matplotlib/commit/6698edcfe28dce1e0f42a7c432e56a5a21fdd45a#diff-9c604e3ebce77d5db7e7eb4a4f92a08a8fab56faa8646ecf952ed0a3ad7a233c)](https://github.com/NolanO64/matplotlib/actions/runs/9701495186)](https://github.com/NolanO64/matplotlib/actions/runs/9701495186)
+
 
 **Old coverage results**
 ![WhatsApp Image 2024-06-27 at 21 37 23_da507acc](https://github.com/NolanO64/matplotlib/assets/124878984/9bf286da-46ac-419b-8672-9784e3c9e493)
@@ -199,9 +200,10 @@ The branch coverage improved from 0% to 80% because new tests were added. These 
 
 **Test for** `lib/matplotlib/pyplot.py`
 
-Link to commit : [44d973d927a234669b290cd6dafe2b9c69fbfe2d](https://github.com/NolanO64/matplotlib/commit/44d973d927a234669b290cd6dafe2b9c69fbfe2d#diff-1b573023d84935306a147bec7f137e59ae79c3d4f3bbea81152eb0c94b58a579)
+Link to commit : [[[44d973d927a234669b290cd6dafe2b9c69fbfe2d](https://github.com/NolanO64/matplotlib/commit/44d973d927a234669b290cd6dafe2b9c69fbfe2d#diff-1b573023d84935306a147bec7f137e59ae79c3d4f3bbea81152eb0c94b58a579)
+](https://github.com/NolanO64/matplotlib/actions/runs/9701495186)
 
-**Old coverage results**
+**Old coverage results**](https://github.com/NolanO64/matplotlib/actions/runs/9701495186)
 
 ![image](https://github.com/NolanO64/matplotlib/assets/124878984/20c286c9-2e6d-43b6-9057-9d1655d573aa)
 
