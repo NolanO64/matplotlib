@@ -332,7 +332,7 @@ def test_callbackregistry_default_exception_handler(capsys, monkeypatch):
     assert "takes 0 positional arguments but 1 was given" in outerr.err
 
 
-from cbook import get_sample_data, branch_coverage, print_coverage
+from matplotlib.cbook import get_sample_data, branch_coverage, print_coverage
 import unittest
 class TestGetSampleData(unittest.TestCase):
 
