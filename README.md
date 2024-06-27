@@ -114,7 +114,7 @@ Link to commit : [68dd30ee2d000e94ec67a568a245cc16f300f9dd](https://github.com/m
 `lib\matplotlib\cbook.py\get_sample_data`
 
 
-Link to commit : [05e9423e303274d5b88b973cbd16ac3550cf01c2]
+Link to commit : [05e9423e303274d5b88b973cbd16ac3550cf01c2] ([https://github.com/matplotlib/matplotlib/commit/05e9423e303274d5b88b973cbd16ac3550cf01c2]
 
 
 <Provide a screenshot of the coverage results output by the instrumentation>
