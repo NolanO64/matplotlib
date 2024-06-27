@@ -124,7 +124,7 @@ Link to commit : [05e9423e303274d5b88b973cbd16ac3550cf01c2] ([https://github.com
 
 
 
-Link to commit : [e3bec661e353f0d787828bbf5513e509d9da0b63]
+Link to commit : [e3bec661e353f0d787828bbf5513e509d9da0b63](https://github.com/matplotlib/matplotlib/commit/e3bec661e353f0d787828bbf5513e509d9da0b63)
 
 <Provide a screenshot of the coverage results output by the instrumentation>
 
@@ -235,7 +235,7 @@ The branch coverage improved from 0% to 97% because new tests were added.
 
 **Test for** `lib\matplotlib\cbook.py\get_sample_data`
 
-Link to commit : [c7e3f1afe481d4cfc4d3fa9f8c6f0eb9b4c4dc23]
+Link to commit : [c7e3f1afe481d4cfc4d3fa9f8c6f0eb9b4c4dc23](https://github.com/matplotlib/matplotlib/commit/c7e3f1afe481d4cfc4d3fa9f8c6f0eb9b4c4dc23)
 
 **Old coverage results**
 
@@ -246,7 +246,7 @@ The branch coverage improved because new tests were added covering more branches
 
 **Test for** `lib/matplotlib/spines.py\set_bounds`
 
-Link to commit : [a8ca46063eb5a712413ef9e36a60d4597dc5a648]
+Link to commit : [a8ca46063eb5a712413ef9e36a60d4597dc5a648](https://github.com/matplotlib/matplotlib/commit/a8ca46063eb5a712413ef9e36a60d4597dc5a648)
 **Old coverage results**
 
 **New coverage results**
