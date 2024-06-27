@@ -107,25 +107,24 @@ Link to commit : [68dd30ee2d000e94ec67a568a245cc16f300f9dd](https://github.com/m
 
 ![Screen Shot 2024-06-27 at 22 47 19](https://github.com/NolanO64/matplotlib/assets/122310698/56ea7746-cee2-4c67-8a03-df300859e8bf)
 
+
 **Eric Pătrașcu**
 
 
-`first function`
+`lib\matplotlib\cbook.py\get_sample_data`
 
 
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+Link to commit : [05e9423e303274d5b88b973cbd16ac3550cf01c2]
 
 
 <Provide a screenshot of the coverage results output by the instrumentation>
 
 
-`second function`
+`lib\matplotlib\spines.py\set_bounds`
 
 
-<Provide the same kind of information provided for Function 1>
 
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
-
+Link to commit : [e3bec661e353f0d787828bbf5513e509d9da0b63]
 
 <Provide a screenshot of the coverage results output by the instrumentation>
 
@@ -232,6 +231,27 @@ Link to commit : [888081d8cc3d2e2ea815130aaa15bcecf43299b8](https://github.com/m
 
 The branch coverage improved from 0% to 97% because new tests were added.
 
+**Eric Patrascu**
+
+**Test for** `lib\matplotlib\cbook.py\get_sample_data`
+
+Link to commit : [c7e3f1afe481d4cfc4d3fa9f8c6f0eb9b4c4dc23]
+
+**Old coverage results**
+
+
+**New coverage results**
+
+The branch coverage improved because new tests were added covering more branches.
+
+**Test for** `lib/matplotlib/spines.py\set_bounds`
+
+Link to commit : [a8ca46063eb5a712413ef9e36a60d4597dc5a648]
+**Old coverage results**
+
+**New coverage results**
+
+
 
 ### Overall
 
@@ -263,4 +283,6 @@ The branch coverage improved from 0% to 97% because new tests were added.
 - Added tests to improve branch coverage of `lib/matplotlib/test_graphviz_dump_transform.py`
 - Branch coverage analysis of `lib/matplotlib/colors.py/is_color_of`
 - Added tests to improve branch coverage of `lib/matplotlib/test_is_color_of.py`
+
+
 
