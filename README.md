@@ -71,6 +71,7 @@ Link to commit : [0c42901b4508e1f3a0c2d75334fb2d7f2397878d](https://github.com/N
 
 `lib\matplotlib\stackplot.py`
 
+![image](https://github.com/NolanO64/matplotlib/assets/124878984/6ab151c5-ddce-43e8-8eae-56d17a9cca29)
 
 <Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
 
@@ -80,6 +81,7 @@ Link to commit : [0c42901b4508e1f3a0c2d75334fb2d7f2397878d](https://github.com/N
 
 `lib\matplotlib\pyplot.py`
 
+![image](https://github.com/NolanO64/matplotlib/assets/124878984/20c286c9-2e6d-43b6-9057-9d1655d573aa)
 
 <Provide the same kind of information provided for Function 1>
 
@@ -176,7 +178,39 @@ Link to commit : [44d973d927a234669b290cd6dafe2b9c69fbfe2d](https://github.com/N
 
 
 The branch coverage improved from 57% to 100% because new tests were added. These tests now cover previously untested branches, including cases for `bbox_is_BboxBase_instance`, `bbox_length_is_not_2`, and `transform_is_not_None`.
-  
+
+**Moegiez Bhatti**
+
+**Test for** `lib/matplotlib/stackplot.py`
+
+Link to commit : [6698edcfe28dce1e0f42a7c432e56a5a21fdd45a](https://github.com/NolanO64/matplotlib/commit/6698edcfe28dce1e0f42a7c432e56a5a21fdd45a#diff-9c604e3ebce77d5db7e7eb4a4f92a08a8fab56faa8646ecf952ed0a3ad7a233c)
+
+**Old coverage results**
+![image](https://github.com/NolanO64/matplotlib/assets/124878984/6ab151c5-ddce-43e8-8eae-56d17a9cca29)
+
+
+**New coverage results**
+
+![image](https://github.com/NolanO64/matplotlib/assets/124878984/37250e3e-4c16-4d48-8bbe-7578a11aab17)
+
+
+The branch coverage improved from 0% to 80% because new tests were added. These tests now cover more branches.
+
+**Test for** `lib/matplotlib/pyplot.py`
+
+Link to commit : [44d973d927a234669b290cd6dafe2b9c69fbfe2d](https://github.com/NolanO64/matplotlib/commit/44d973d927a234669b290cd6dafe2b9c69fbfe2d#diff-1b573023d84935306a147bec7f137e59ae79c3d4f3bbea81152eb0c94b58a579)
+
+**Old coverage results**
+
+![image](https://github.com/NolanO64/matplotlib/assets/124878984/20c286c9-2e6d-43b6-9057-9d1655d573aa)
+
+**New coverage results**
+
+![image](https://github.com/NolanO64/matplotlib/assets/124878984/5d911a8f-dc70-4bac-b82e-5a9c5ae1cd8f)
+
+
+The branch coverage improved from 0% to 50% because new tests were added. These tests now cover previously untested branches, including cases for `bbox_is_BboxBase_instance`, `bbox_length_is_not_2`, and `transform_is_not_None`.
+
 
 ### Overall
 
