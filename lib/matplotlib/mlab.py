@@ -568,7 +568,6 @@ def csd(x, y, NFFT=None, Fs=None, detrend=None, window=None,
     psd : equivalent to setting ``y = x``.
     """
     if NFFT is None:
-        branch_coverage["csd_1"] = True
         NFFT = 256
     Pxy, freqs, _ = _spectral_helper(x=x, y=y, NFFT=NFFT, Fs=Fs,
                                      detrend_func=detrend, window=window,
@@ -577,19 +576,12 @@ def csd(x, y, NFFT=None, Fs=None, detrend=None, window=None,
                                      mode='psd')
 
     if Pxy.ndim == 2:
-        branch_coverage["csd_2"] = True
         if Pxy.shape[1] > 1:
-            branch_coverage["csd_3"] = True
             Pxy = Pxy.mean(axis=1)
         else:
             Pxy = Pxy[:, 0]
-
-    print_coverage()
     return Pxy, freqs
 
-def print_coverage():
-    for branch, hit in branch_coverage.items():
-        print(f"{branch} was {'hit' if hit else 'not hit'}")
 
 
 _single_spectrum_docs = """\

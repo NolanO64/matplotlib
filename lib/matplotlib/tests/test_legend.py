@@ -1470,3 +1470,74 @@ def test_boxplot_legend_labels():
     bp4 = axs[3].boxplot(data, label='box A')
     assert bp4['medians'][0].get_label() == 'box A'
     assert all(x.get_label().startswith("_") for x in bp4['medians'][1:])
+
+def test_set_bbox_to_anchor_bbox_is_BboxBase_instance():
+    # Create a plot with a labeled artist
+    fig, ax = plt.subplots()
+    ax.plot([0, 1], label='test')
+    legend = ax.legend()
+
+    # Create a Bbox instance and set it to the legend
+    bbox_instance = mtransforms.Bbox.from_bounds(0, 0, 1, 1)
+    legend.set_bbox_to_anchor(bbox_instance)
+
+    # Check that _bbox_to_anchor is a TransformedBbox
+    assert isinstance(legend._bbox_to_anchor, mtransforms.TransformedBbox)
+
+    # Apply the transformation to the points of bbox_instance
+    transform = legend._bbox_to_anchor._transform
+    transformed_points = transform.transform(bbox_instance.get_points())
+
+    # Retrieve the points of _bbox_to_anchor
+    legend_points = legend._bbox_to_anchor.get_points()
+
+    # Compare the transformed points with the points of _bbox_to_anchor
+    assert_allclose(transformed_points, legend_points, atol=1e-7)
+
+def test_set_bbox_to_anchor_bbox_length_is_not_2():
+    # Create a plot with a labeled artist
+    fig, ax = plt.subplots()
+    ax.plot([0, 1], label='test')
+    legend = ax.legend()
+
+    # Create a Bbox with length not equal to 2 and set it to the legend
+    bbox = (0, 0, 1, 1)  # length is 4
+    legend.set_bbox_to_anchor(bbox)
+
+    # Create the expected Bbox after transformation
+    expected_bbox = mtransforms.Bbox.from_bounds(0, 0, 1, 1)
+    
+    # Apply the transformation to the points of expected_bbox
+    transform = legend._bbox_to_anchor._transform
+    transformed_points = transform.transform(expected_bbox.get_points())
+
+    # Retrieve the points of _bbox_to_anchor
+    legend_points = legend._bbox_to_anchor.get_points()
+
+    # Compare the transformed points with the points of _bbox_to_anchor
+    assert_allclose(transformed_points, legend_points, atol=1e-7)
+
+def test_set_bbox_to_anchor_transform_is_not_None():
+    # Create a plot with a labeled artist
+    fig, ax = plt.subplots()
+    ax.plot([0, 1], label='test')
+    legend = ax.legend()
+
+    # Create a Bbox instance and set it to the legend with a transform
+    bbox = (0, 0)
+    transform = mtransforms.IdentityTransform()
+    legend.set_bbox_to_anchor(bbox, transform=transform)
+
+    # Check that _bbox_to_anchor is a TransformedBbox
+    assert isinstance(legend._bbox_to_anchor, mtransforms.TransformedBbox)
+
+    # Apply the transformation to the points of original_bbox
+    original_bbox = legend.get_bbox_to_anchor()
+    applied_transform = legend._bbox_to_anchor._transform
+    transformed_points = applied_transform.transform(original_bbox.get_points())
+
+    # Retrieve the points of _bbox_to_anchor
+    legend_points = legend._bbox_to_anchor.get_points()
+
+    # Compare the transformed points with the points of _bbox_to_anchor
+    assert_allclose(transformed_points, legend_points, atol=1e-7)
