@@ -69,69 +69,57 @@ Link to commit : [0c42901b4508e1f3a0c2d75334fb2d7f2397878d](https://github.com/N
 **Moegiez Bhatti**
 
 
-`lib\matplotlib\stackplot.py`
+`lib/matplotlib/stackplot.py/stackplot`
+
+Link to commit [3674e9ae2fd0295eb7490d2263586048c19c74c8](https://github.com/NolanO64/matplotlib/commit/3674e9ae2fd0295eb7490d2263586048c19c74c8#diff-07917398382925aab7841438c7851a43483e93a5f91d55130f014bc555c3e163)
 
 ![WhatsApp Image 2024-06-27 at 21 37 23_da507acc](https://github.com/NolanO64/matplotlib/assets/124878984/4cec9d67-3d1b-476e-a93e-b116391b4428)
 
 
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
 
 
-<Provide a screenshot of the coverage results output by the instrumentation>
+`lib\matplotlib\pyplot.py/switch_backend`
 
 
-`lib\matplotlib\pyplot.py`
+Link to commit : [2fc7ced47833ea4dcb2138db4c7bf734527f3fb9](https://github.com/NolanO64/matplotlib/commit/2fc7ced47833ea4dcb2138db4c7bf734527f3fb9#diff-d1edb5a528e7423f485b24cac2083d05d365a19352f886bf15af3ef442bdda92)
 
 ![image](https://github.com/NolanO64/matplotlib/assets/124878984/20c286c9-2e6d-43b6-9057-9d1655d573aa)
 
-<Provide the same kind of information provided for Function 1>
-
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
-
-
-<Provide a screenshot of the coverage results output by the instrumentation>
 
 **Narek Darbinyan**
 
 
-`first function`
+`lib\matplotlib\_internal_utils.py/graphviz_dump_transform`
+
+Link to commit : [fe3584d342331f41c2b9912887a33819a7a37c8a](https://github.com/matplotlib/matplotlib/commit/fe3584d342331f41c2b9912887a33819a7a37c8a)
+
+![Screen Shot 2024-06-27 at 22 59 35](https://github.com/NolanO64/matplotlib/assets/122310698/ee1a9e8d-3abd-4033-bf43-93a775973119)
 
 
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+`lib\matplotlib\colors.py/is_color_like`
 
+Link to commit : [68dd30ee2d000e94ec67a568a245cc16f300f9dd](https://github.com/matplotlib/matplotlib/commit/68dd30ee2d000e94ec67a568a245cc16f300f9dd)
 
-<Provide a screenshot of the coverage results output by the instrumentation>
+![Screen Shot 2024-06-27 at 22 47 19](https://github.com/NolanO64/matplotlib/assets/122310698/56ea7746-cee2-4c67-8a03-df300859e8bf)
 
-
-`second function`
-
-
-<Provide the same kind of information provided for Function 1>
-
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
-
-
-<Provide a screenshot of the coverage results output by the instrumentation>
 
 **Eric Pătrașcu**
 
 
-`first function`
+`lib\matplotlib\cbook.py\get_sample_data`
 
 
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+Link to commit : [05e9423e303274d5b88b973cbd16ac3550cf01c2] ([https://github.com/matplotlib/matplotlib/commit/05e9423e303274d5b88b973cbd16ac3550cf01c2]
 
 
 <Provide a screenshot of the coverage results output by the instrumentation>
 
 
-`second function`
+`lib\matplotlib\spines.py\set_bounds`
 
 
-<Provide the same kind of information provided for Function 1>
 
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
-
+Link to commit : [e3bec661e353f0d787828bbf5513e509d9da0b63](https://github.com/matplotlib/matplotlib/commit/e3bec661e353f0d787828bbf5513e509d9da0b63)
 
 <Provide a screenshot of the coverage results output by the instrumentation>
 
@@ -182,9 +170,9 @@ The branch coverage improved from 57% to 100% because new tests were added. Thes
 
 **Moegiez Bhatti**
 
-**Test for** `lib/matplotlib/stackplot.py`
+**Test for** `lib/matplotlib/stackplot.py/stackplot`
 
-Link to commit : [[[6698edcfe28dce1e0f42a7c432e56a5a21fdd45a](https://github.com/NolanO64/matplotlib/commit/6698edcfe28dce1e0f42a7c432e56a5a21fdd45a#diff-9c604e3ebce77d5db7e7eb4a4f92a08a8fab56faa8646ecf952ed0a3ad7a233c)](https://github.com/NolanO64/matplotlib/actions/runs/9701495186)](https://github.com/NolanO64/matplotlib/actions/runs/9701495186)
+Link to commit : [0ef7c5c9c0ba1eeb98f1dca9604e353698f3c262](https://github.com/NolanO64/matplotlib/commit/0ef7c5c9c0ba1eeb98f1dca9604e353698f3c262#diff-cd48b81508a78bf109163b979dcb9a30be1e415aa0f7371b43a9d1d5e90f18f8)
 
 
 **Old coverage results**
@@ -198,10 +186,9 @@ Link to commit : [[[6698edcfe28dce1e0f42a7c432e56a5a21fdd45a](https://github.com
 
 The branch coverage improved from 0% to 80% because new tests were added. These tests now cover more branches.
 
-**Test for** `lib/matplotlib/pyplot.py`
+**Test for** `lib\matplotlib\pyplot.py/switch_backend`
 
-Link to commit : [[[44d973d927a234669b290cd6dafe2b9c69fbfe2d](https://github.com/NolanO64/matplotlib/commit/44d973d927a234669b290cd6dafe2b9c69fbfe2d#diff-1b573023d84935306a147bec7f137e59ae79c3d4f3bbea81152eb0c94b58a579)
-](https://github.com/NolanO64/matplotlib/actions/runs/9701495186)
+Link to commit : [0ef7c5c9c0ba1eeb98f1dca9604e353698f3c262](https://github.com/NolanO64/matplotlib/commit/0ef7c5c9c0ba1eeb98f1dca9604e353698f3c262#diff-ec464756f0326a52d62834e91ca507b279ba804223125650a016460adca2d3a8)
 
 **Old coverage results**](https://github.com/NolanO64/matplotlib/actions/runs/9701495186)
 
@@ -213,6 +200,53 @@ Link to commit : [[[44d973d927a234669b290cd6dafe2b9c69fbfe2d](https://github.com
 
 
 The branch coverage improved from 0% to 50% because new tests were added.
+
+
+
+
+**Narek Darbinyan**
+
+**Test for** `lib\matplotlib\_internal_utils.py/graphviz_dump_transform`
+
+**New coverage results**
+
+<img width="1172" alt="Screen Shot 2024-06-27 at 22 38 39" src="https://github.com/NolanO64/matplotlib/assets/122310698/43ccc832-03fd-4867-a1ba-3232298d7877">
+
+
+The branch coverage improved from 0% to 89% because new tests were added.
+
+**Test for** `lib\matplotlib\colors.py/is_color_like`
+
+Link to commit : [888081d8cc3d2e2ea815130aaa15bcecf43299b8](https://github.com/matplotlib/matplotlib/commit/888081d8cc3d2e2ea815130aaa15bcecf43299b8)
+
+
+**New coverage results**
+
+<img width="1172" alt="Screen Shot 2024-06-27 at 22 38 11" src="https://github.com/NolanO64/matplotlib/assets/122310698/fe9a2fa5-9c09-43c2-a6a8-6addaf0cdef2">
+
+
+The branch coverage improved from 0% to 97% because new tests were added.
+
+**Eric Patrascu**
+
+**Test for** `lib\matplotlib\cbook.py\get_sample_data`
+
+Link to commit : [c7e3f1afe481d4cfc4d3fa9f8c6f0eb9b4c4dc23](https://github.com/matplotlib/matplotlib/commit/c7e3f1afe481d4cfc4d3fa9f8c6f0eb9b4c4dc23)
+
+**Old coverage results**
+
+
+**New coverage results**
+
+The branch coverage improved because new tests were added covering more branches.
+
+**Test for** `lib/matplotlib/spines.py\set_bounds`
+
+Link to commit : [a8ca46063eb5a712413ef9e36a60d4597dc5a648](https://github.com/matplotlib/matplotlib/commit/a8ca46063eb5a712413ef9e36a60d4597dc5a648)
+**Old coverage results**
+
+**New coverage results**
+
 
 
 ### Overall
@@ -238,3 +272,13 @@ The branch coverage improved from 0% to 50% because new tests were added.
 - Added tests to improve branch coverage of `lib/matplotlib/transforms.py/overlaps`
 - Branch coverage analysis of `lib/matplotlib/legend.py/set_bbox_to_anchor`
 - Added tests to improve branch coverage of `lib/matplotlib/legend.py/set_bbox_to_anchor`
+
+**Narek Darbinyan**
+
+- Branch coverage analysis of `lib/matplotlib/_internal_utils.py/graphviz_dump_transform`
+- Added tests to improve branch coverage of `lib/matplotlib/test_graphviz_dump_transform.py`
+- Branch coverage analysis of `lib/matplotlib/colors.py/is_color_of`
+- Added tests to improve branch coverage of `lib/matplotlib/test_is_color_of.py`
+
+
+
