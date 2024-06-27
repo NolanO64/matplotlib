@@ -54,6 +54,48 @@ def test_spine_class():
     with pytest.raises(ValueError, match='Spines does not support slicing'):
         spines['top':]
 
+from matplotlib.spines import branch_coverage, print_coverage
+
+def setup_function(function):
+    """Setup testing environment before each test function."""
+    global branch_coverage
+    branch_coverage = {key: False for key in branch_coverage}
+
+def test_set_bounds_circle_raises_error():
+    """Test if set_bounds on a circular spine raises the correct error."""
+    spine = Spine(spine_type='circle')
+    with pytest.raises(ValueError) as exc_info:
+        spine.set_bounds(10, 20)
+    assert "incompatible with circular spines" in str(exc_info.value)
+    assert branch_coverage["set_bounds_1"], "Branch set_bounds_1 was not hit."
+
+def test_set_bounds_iterable_low_high_none():
+    """Test if set_bounds correctly unpacks iterable low when high is None."""
+    spine = Spine()
+    spine.set_bounds((5, 15))
+    assert spine.get_bounds() == (5, 15), "Bounds were not correctly unpacked from iterable."
+    assert branch_coverage["set_bounds_2"], "Branch set_bounds_2 was not hit."
+
+def test_set_bounds_low_none_uses_old_low():
+    """Test if set_bounds uses old low when low is None."""
+    spine = Spine(bounds=(10, 20))
+    spine.set_bounds(None, 30)
+    assert spine.get_bounds() == (10, 30), "Old low was not used when low was None."
+    assert branch_coverage["set_bounds_3"], "Branch set_bounds_3 was not hit."
+
+def test_set_bounds_high_none_uses_old_high():
+    """Test if set_bounds uses old high when high is None."""
+    spine = Spine(bounds=(10, 20))
+    spine.set_bounds(15, None)
+    assert spine.get_bounds() == (15, 20), "Old high was not used when high was None."
+    assert branch_coverage["set_bounds_4"], "Branch set_bounds_4 was not hit."
+
+def test_coverage_after_tests():
+    """Check coverage report after all tests have been run."""
+    print_coverage()
+    for value in branch_coverage.values():
+        assert value, "Not all branches were covered."
+
 
 @image_comparison(['spines_axes_positions'])
 def test_spines_axes_positions():
