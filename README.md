@@ -94,24 +94,18 @@ Link to commit : [0c42901b4508e1f3a0c2d75334fb2d7f2397878d](https://github.com/N
 **Narek Darbinyan**
 
 
-`first function`
+`lib\matplotlib\_internal_utils.py/graphviz_dump_transform`
+
+Link to commit : [fe3584d342331f41c2b9912887a33819a7a37c8a](https://github.com/matplotlib/matplotlib/commit/fe3584d342331f41c2b9912887a33819a7a37c8a)
+
+![Screen Shot 2024-06-27 at 22 59 35](https://github.com/NolanO64/matplotlib/assets/122310698/ee1a9e8d-3abd-4033-bf43-93a775973119)
 
 
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+`lib\matplotlib\colors.py/is_color_like`
 
+Link to commit : [68dd30ee2d000e94ec67a568a245cc16f300f9dd](https://github.com/matplotlib/matplotlib/commit/68dd30ee2d000e94ec67a568a245cc16f300f9dd)
 
-<Provide a screenshot of the coverage results output by the instrumentation>
-
-
-`second function`
-
-
-<Provide the same kind of information provided for Function 1>
-
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
-
-
-<Provide a screenshot of the coverage results output by the instrumentation>
+![Screen Shot 2024-06-27 at 22 47 19](https://github.com/NolanO64/matplotlib/assets/122310698/56ea7746-cee2-4c67-8a03-df300859e8bf)
 
 **Eric Pătrașcu**
 
@@ -215,6 +209,30 @@ Link to commit : [[[44d973d927a234669b290cd6dafe2b9c69fbfe2d](https://github.com
 The branch coverage improved from 0% to 50% because new tests were added.
 
 
+**Narek Darbinyan**
+
+**Test for** `lib\matplotlib\_internal_utils.py/graphviz_dump_transform`
+
+**New coverage results**
+
+<img width="1172" alt="Screen Shot 2024-06-27 at 22 38 39" src="https://github.com/NolanO64/matplotlib/assets/122310698/43ccc832-03fd-4867-a1ba-3232298d7877">
+
+
+The branch coverage improved from 0% to 89% because new tests were added.
+
+**Test for** `lib\matplotlib\colors.py/is_color_like`
+
+Link to commit : [888081d8cc3d2e2ea815130aaa15bcecf43299b8](https://github.com/matplotlib/matplotlib/commit/888081d8cc3d2e2ea815130aaa15bcecf43299b8)
+
+
+**New coverage results**
+
+<img width="1172" alt="Screen Shot 2024-06-27 at 22 38 11" src="https://github.com/NolanO64/matplotlib/assets/122310698/fe9a2fa5-9c09-43c2-a6a8-6addaf0cdef2">
+
+
+The branch coverage improved from 0% to 97% because new tests were added.
+
+
 ### Overall
 
 **Old global coverage results**
@@ -238,3 +256,11 @@ The branch coverage improved from 0% to 50% because new tests were added.
 - Added tests to improve branch coverage of `lib/matplotlib/transforms.py/overlaps`
 - Branch coverage analysis of `lib/matplotlib/legend.py/set_bbox_to_anchor`
 - Added tests to improve branch coverage of `lib/matplotlib/legend.py/set_bbox_to_anchor`
+
+**Narek Darbinyan**
+
+- Branch coverage analysis of `lib/matplotlib/_internal_utils.py/graphviz_dump_transform`
+- Added tests to improve branch coverage of `lib/matplotlib/test_graphviz_dump_transform.py`
+- Branch coverage analysis of `lib/matplotlib/colors.py/is_color_of`
+- Added tests to improve branch coverage of `lib/matplotlib/test_is_color_of.py`
+
