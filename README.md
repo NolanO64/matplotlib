@@ -210,7 +210,7 @@ Link to commit : [44d973d927a234669b290cd6dafe2b9c69fbfe2d](https://github.com/N
 ![image](https://github.com/NolanO64/matplotlib/assets/124878984/5d911a8f-dc70-4bac-b82e-5a9c5ae1cd8f)
 
 
-The branch coverage improved from 0% to 50% because new tests were added. These tests now cover previously untested branches, including cases for `bbox_is_BboxBase_instance`, `bbox_length_is_not_2`, and `transform_is_not_None`.
+The branch coverage improved from 0% to 50% because new tests were added.
 
 
 ### Overall
