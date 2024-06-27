@@ -71,7 +71,8 @@ Link to commit : [0c42901b4508e1f3a0c2d75334fb2d7f2397878d](https://github.com/N
 
 `lib\matplotlib\stackplot.py`
 
-![image](https://github.com/NolanO64/matplotlib/assets/124878984/6ab151c5-ddce-43e8-8eae-56d17a9cca29)
+![WhatsApp Image 2024-06-27 at 21 37 23_da507acc](https://github.com/NolanO64/matplotlib/assets/124878984/4cec9d67-3d1b-476e-a93e-b116391b4428)
+
 
 <Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
 
@@ -186,7 +187,7 @@ The branch coverage improved from 57% to 100% because new tests were added. Thes
 Link to commit : [6698edcfe28dce1e0f42a7c432e56a5a21fdd45a](https://github.com/NolanO64/matplotlib/commit/6698edcfe28dce1e0f42a7c432e56a5a21fdd45a#diff-9c604e3ebce77d5db7e7eb4a4f92a08a8fab56faa8646ecf952ed0a3ad7a233c)
 
 **Old coverage results**
-![image](https://github.com/NolanO64/matplotlib/assets/124878984/6ab151c5-ddce-43e8-8eae-56d17a9cca29)
+![WhatsApp Image 2024-06-27 at 21 37 23_da507acc](https://github.com/NolanO64/matplotlib/assets/124878984/9bf286da-46ac-419b-8672-9784e3c9e493)
 
 
 **New coverage results**
