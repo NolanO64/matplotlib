@@ -332,6 +332,48 @@ def test_callbackregistry_default_exception_handler(capsys, monkeypatch):
     assert "takes 0 positional arguments but 1 was given" in outerr.err
 
 
+from cbook import get_sample_data, branch_coverage, print_coverage
+import unittest
+class TestGetSampleData(unittest.TestCase):
+
+    def setUp(self):
+        # Reset the branch coverage before each test
+        for key in branch_coverage.keys():
+            branch_coverage[key] = False
+
+    def test_asfileobj_false(self):
+        result = get_sample_data("example.csv", asfileobj=False)
+        self.assertTrue(branch_coverage["get_sample_data_1"])
+        self.assertIsInstance(result, str)
+
+    def test_suffix_gz(self):
+        result = get_sample_data("example.gz", asfileobj=True)
+        self.assertTrue(branch_coverage["get_sample_data_2"])
+        self.assertTrue(hasattr(result, 'read'))  # Check if it has file-like object methods
+
+    def test_suffix_npy_np_load_true(self):
+        result = get_sample_data("example.npy", asfileobj=True, np_load=True)
+        self.assertTrue(branch_coverage["get_sample_data_4"])
+        self.assertTrue(hasattr(result, 'shape'))  # Check if it returns a numpy array (mocked)
+
+    def test_suffix_npy_np_load_false(self):
+        result = get_sample_data("example.npy", asfileobj=True, np_load=False)
+        self.assertTrue(branch_coverage["get_sample_data_3"])
+        self.assertTrue(hasattr(result, 'read'))  # Check if it has file-like object methods
+
+    def test_suffix_txt(self):
+        result = get_sample_data("example.txt", asfileobj=True)
+        self.assertTrue(branch_coverage["get_sample_data_5"])
+        self.assertTrue(hasattr(result, 'read'))  # Check if it has file-like object methods
+
+    def test_unknown_suffix(self):
+        result = get_sample_data("example.unknown", asfileobj=True)
+        self.assertTrue(branch_coverage["get_sample_data_6"])
+        self.assertTrue(hasattr(result, 'read'))  # Check if it has file-like object methods
+
+if __name__ == "__main__":
+    pytest.main()
+
 def raising_cb_reg(func):
     class TestException(Exception):
         pass
