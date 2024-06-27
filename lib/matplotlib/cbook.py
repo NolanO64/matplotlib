@@ -502,6 +502,14 @@ def is_scalar_or_string(val):
     """Return whether the given object is a scalar or string like."""
     return isinstance(val, str) or not np.iterable(val)
 
+branch_coverage = {
+    "get_sample_data_1": False,  # if asfileobj
+    "get_sample_data_2": False,  # if suffix == '.gz'
+    "get_sample_data_3": False,  # elif suffix in ['.npy', '.npz']
+    "get_sample_data_4": False,  # if np_load
+    "get_sample_data_5": False,  # elif suffix in ['.csv', '.xrc', '.txt']
+    "get_sample_data_6": False   # else branch (for asfileobj)
+}
 
 @_api.delete_parameter(
     "3.8", "np_load", alternative="open(get_sample_data(..., asfileobj=False))")
@@ -510,30 +518,48 @@ def get_sample_data(fname, asfileobj=True, *, np_load=True):
     Return a sample data file.  *fname* is a path relative to the
     :file:`mpl-data/sample_data` directory.  If *asfileobj* is `True`
     return a file object, otherwise just a file path.
-
+    
     Sample data files are stored in the 'mpl-data/sample_data' directory within
     the Matplotlib package.
-
+    
     If the filename ends in .gz, the file is implicitly ungzipped.  If the
     filename ends with .npy or .npz, and *asfileobj* is `True`, the file is
     loaded with `numpy.load`.
     """
+    
     path = _get_data_path('sample_data', fname)
+    
     if asfileobj:
+        branch_coverage["get_sample_data_1"] = True
         suffix = path.suffix.lower()
+        
         if suffix == '.gz':
+            branch_coverage["get_sample_data_2"] = True
             return gzip.open(path)
+        
         elif suffix in ['.npy', '.npz']:
+            branch_coverage["get_sample_data_3"] = True
             if np_load:
+                branch_coverage["get_sample_data_4"] = True
                 return np.load(path)
             else:
                 return path.open('rb')
+        
         elif suffix in ['.csv', '.xrc', '.txt']:
+            branch_coverage["get_sample_data_5"] = True
             return path.open('r')
+        
         else:
+            branch_coverage["get_sample_data_6"] = True
             return path.open('rb')
+    
     else:
+        branch_coverage["get_sample_data_1"] = True  # Since asfileobj is False
         return str(path)
+
+def print_coverage():
+    for branch, hit in branch_coverage.items():
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
 
 
 def _get_data_path(*args):
