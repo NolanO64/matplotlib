@@ -12,6 +12,13 @@ import subprocess
 from matplotlib.transforms import TransformNode
 
 
+branch_coverage = {
+    "graphviz_dump_transform_1": False,
+    "graphviz_dump_transform_2": False,
+    "graphviz_dump_transform_3": False,
+    "graphviz_dump_transform_4": False,
+}
+
 def graphviz_dump_transform(transform, dest, *, highlight=None):
     """
     Generate a graphical representation of the transform tree for *transform*
@@ -32,18 +39,22 @@ def graphviz_dump_transform(transform, dest, *, highlight=None):
     """
 
     if highlight is None:
+        branch_coverage["graphviz_dump_transform_1"] = True
         highlight = [transform]
     seen = set()
 
     def recurse(root, buf):
         if id(root) in seen:
+            branch_coverage["graphviz_dump_transform_2"] = True
             return
         seen.add(id(root))
         props = {}
         label = type(root).__name__
         if root._invalid:
+            branch_coverage["graphviz_dump_transform_3"] = True
             label = f'[{label}]'
         if root in highlight:
+            branch_coverage["graphviz_dump_transform_4"] = True
             props['style'] = 'bold'
         props['shape'] = 'box'
         props['label'] = '"%s"' % label
@@ -62,3 +73,7 @@ def graphviz_dump_transform(transform, dest, *, highlight=None):
     subprocess.run(
         ['dot', '-T', Path(dest).suffix[1:], '-o', dest],
         input=buf.getvalue().encode('utf-8'), check=True)
+
+def print_coverage():
+    for branch, hit in branch_coverage.items():
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
