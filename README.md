@@ -1,74 +1,203 @@
-[![PyPi](https://img.shields.io/pypi/v/matplotlib)](https://pypi.org/project/matplotlib/)
-[![Conda](https://img.shields.io/conda/vn/conda-forge/matplotlib)](https://anaconda.org/conda-forge/matplotlib)
-[![Downloads](https://img.shields.io/pypi/dm/matplotlib)](https://pypi.org/project/matplotlib)
-[![NUMFocus](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
+﻿# Report for Assignment 1
 
-[![Discourse help forum](https://img.shields.io/badge/help_forum-discourse-blue.svg)](https://discourse.matplotlib.org)
-[![Gitter](https://badges.gitter.im/matplotlib/matplotlib.svg)](https://gitter.im/matplotlib/matplotlib)
-[![GitHub issues](https://img.shields.io/badge/issue_tracking-github-blue.svg)](https://github.com/matplotlib/matplotlib/issues)
-[![Contributing](https://img.shields.io/badge/PR-Welcome-%23FF8300.svg?)](https://matplotlib.org/stable/devel/index.html)
 
-[![GitHub actions status](https://github.com/matplotlib/matplotlib/workflows/Tests/badge.svg)](https://github.com/matplotlib/matplotlib/actions?query=workflow%3ATests)
-[![Azure pipelines status](https://dev.azure.com/matplotlib/matplotlib/_apis/build/status/matplotlib.matplotlib?branchName=main)](https://dev.azure.com/matplotlib/matplotlib/_build/latest?definitionId=1&branchName=main)
-[![AppVeyor status](https://ci.appveyor.com/api/projects/status/github/matplotlib/matplotlib?branch=main&svg=true)](https://ci.appveyor.com/project/matplotlib/matplotlib)
-[![Codecov status](https://codecov.io/github/matplotlib/matplotlib/badge.svg?branch=main&service=github)](https://app.codecov.io/gh/matplotlib/matplotlib)
-[![EffVer Versioning](https://img.shields.io/badge/version_scheme-EffVer-0097a7)](https://jacobtomlinson.dev/effver)
+## Project chosen
 
-![Matplotlib logotype](https://matplotlib.org/_static/logo2.svg)
 
-Matplotlib is a comprehensive library for creating static, animated, and
-interactive visualizations in Python.
+Name: matplotlib
 
-Check out our [home page](https://matplotlib.org/) for more information.
 
-![image](https://matplotlib.org/_static/readme_preview.png)
+URL: https://github.com/matplotlib/matplotlib
 
-Matplotlib produces publication-quality figures in a variety of hardcopy
-formats and interactive environments across platforms. Matplotlib can be
-used in Python scripts, Python/IPython shells, web application servers,
-and various graphical user interface toolkits.
 
-## Install
+Number of lines of code and the tool used to count it: Lizard - 229 KOC
 
-See the [install
-documentation](https://matplotlib.org/stable/users/installing/index.html),
-which is generated from `/doc/install/index.rst`
 
-## Contribute
+Programming language: Python
 
-You've discovered a bug or something else you want to change — excellent!
 
-You've worked out a way to fix it — even better!
+## Coverage measurement
 
-You want to tell us about it — best of all!
 
-Start at the [contributing
-guide](https://matplotlib.org/devdocs/devel/contribute.html)!
+### Existing tool
 
-## Contact
 
-[Discourse](https://discourse.matplotlib.org/) is the discussion forum
-for general questions and discussions and our recommended starting
-point.
+The tool we use to perform coverage analysis is `Coverage.py`.
 
-Our active mailing lists (which are mirrored on Discourse) are:
 
--   [Users](https://mail.python.org/mailman/listinfo/matplotlib-users)
-    mailing list: <matplotlib-users@python.org>
--   [Announcement](https://mail.python.org/mailman/listinfo/matplotlib-announce)
-    mailing list: <matplotlib-announce@python.org>
--   [Development](https://mail.python.org/mailman/listinfo/matplotlib-devel)
-    mailing list: <matplotlib-devel@python.org>
+**Execution:**
 
-[Gitter](https://gitter.im/matplotlib/matplotlib) is for coordinating
-development and asking questions directly related to contributing to
-matplotlib.
 
-## Citing Matplotlib
+```sh
+coverage run -m pytest
+coverage report
+```
 
-If Matplotlib contributes to a project that leads to publication, please
-acknowledge this by citing Matplotlib.
 
-[A ready-made citation
-entry](https://matplotlib.org/stable/users/project/citing.html) is
-available.
+**Screenshot of Coverage Results:**
+
+
+<img width="655" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/9a1e39c5-4be8-4dc4-8461-19236c096539">
+
+
+
+### Your own coverage tool
+
+
+
+**Nolan Otam**
+
+
+`lib/matplotlib/transforms.py/overlaps`
+
+
+Link to commit : [5a98cd267a3d28499469553ef6e4504d2c25f052](https://github.com/NolanO64/matplotlib/commit/5a98cd267a3d28499469553ef6e4504d2c25f052#diff-501b7013d3efa42e08d1cc8dc7a27ee6944fcddb062cd7032249a0031bb01ff4)
+
+<img width="850" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/7d982489-447f-4818-a242-883fab3197b4">
+
+
+
+
+`lib/matplotlib/legend.py/set_bbox_to_anchor`
+
+Link to commit : [0c42901b4508e1f3a0c2d75334fb2d7f2397878d](https://github.com/NolanO64/matplotlib/commit/0c42901b4508e1f3a0c2d75334fb2d7f2397878d#diff-e7a00bb4a353fa623c1d0c1de5c6ca602b7ab38e8906d4842640983133b9196a)
+
+![image](https://github.com/NolanO64/matplotlib/assets/75957824/d3e25188-4150-4f7b-a509-a52b161d30ec)
+
+
+
+**Moegiez Bhatti**
+
+
+`first function`
+
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+
+`second function`
+
+
+<Provide the same kind of information provided for Function 1>
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+**Narek Darbinyan**
+
+
+`first function`
+
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+
+`second function`
+
+
+<Provide the same kind of information provided for Function 1>
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+**Eric Pătrașcu**
+
+
+`first function`
+
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+
+`second function`
+
+
+<Provide the same kind of information provided for Function 1>
+
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+
+
+
+## Coverage improvement
+
+
+### Individual tests
+
+
+<The following is supposed to be repeated for each group member>
+
+
+**Nolan Otam**
+
+**Test for** `lib/matplotlib/transforms.py/overlaps`
+
+Link to commit : [6698edcfe28dce1e0f42a7c432e56a5a21fdd45a](https://github.com/NolanO64/matplotlib/commit/6698edcfe28dce1e0f42a7c432e56a5a21fdd45a#diff-9c604e3ebce77d5db7e7eb4a4f92a08a8fab56faa8646ecf952ed0a3ad7a233c)
+
+
+**Old coverage results**
+
+<img width="850" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/ffdcf464-8a63-4f91-b128-87329e29eabb">
+
+**New coverage results**
+
+<img width="854" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/02751737-be92-4624-afc7-1a2e5199b521">
+
+
+The branch coverage improved from 0% to 100% because new tests were added. These tests now cover all branches, including `ax2_ax1_swap`, `ay2_ay1_swap`, `bx2_bx1_swap`, and `by2_by1_swap`.
+
+
+**Test for** `lib/matplotlib/legend.py/set_bbox_to_anchor`
+
+Link to commit : [44d973d927a234669b290cd6dafe2b9c69fbfe2d](https://github.com/NolanO64/matplotlib/commit/44d973d927a234669b290cd6dafe2b9c69fbfe2d#diff-1b573023d84935306a147bec7f137e59ae79c3d4f3bbea81152eb0c94b58a579)
+
+**Old coverage results**
+
+![image](https://github.com/NolanO64/matplotlib/assets/75957824/e6575ab0-d75b-46ca-8988-8bc3c4c2ee3c)
+
+**New coverage results**
+
+![image](https://github.com/NolanO64/matplotlib/assets/75957824/c7962b7e-e6ee-4e70-a7bf-8229c5a75fd2)
+
+
+The branch coverage improved from 57% to 100% because new tests were added. These tests now cover previously untested branches, including cases for `bbox_is_BboxBase_instance`, `bbox_length_is_not_2`, and `transform_is_not_None`.
+  
+
+### Overall
+
+**Old global coverage results**
+
+<img width="655" alt="image" src="https://github.com/NolanO64/matplotlib/assets/75957824/9a1e39c5-4be8-4dc4-8461-19236c096539">
+
+**New global coverage results**
+
+<Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>
+
+
+## Statement of individual contributions
+
+
+<Write what each group member did>
+
+
+**Nolan Otam**
+
+- Branch coverage analysis of `lib/matplotlib/transforms.py/overlaps`
+- Added tests to improve branch coverage of `lib/matplotlib/transforms.py/overlaps`
+- Branch coverage analysis of `lib/matplotlib/legend.py/set_bbox_to_anchor`
+- Added tests to improve branch coverage of `lib/matplotlib/legend.py/set_bbox_to_anchor`
