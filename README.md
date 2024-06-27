@@ -69,7 +69,7 @@ Link to commit : [0c42901b4508e1f3a0c2d75334fb2d7f2397878d](https://github.com/N
 **Moegiez Bhatti**
 
 
-`first function`
+`lib\matplotlib\stackplot.py`
 
 
 <Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
@@ -78,7 +78,7 @@ Link to commit : [0c42901b4508e1f3a0c2d75334fb2d7f2397878d](https://github.com/N
 <Provide a screenshot of the coverage results output by the instrumentation>
 
 
-`second function`
+`lib\matplotlib\pyplot.py`
 
 
 <Provide the same kind of information provided for Function 1>
