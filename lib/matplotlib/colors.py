@@ -218,17 +218,30 @@ def _is_nth_color(c):
     return isinstance(c, str) and _nth_color_re.match(c)
 
 
+branch_coverage_colors = {
+    "is_color_like_1": False,  # if _is_nth_color(c)
+    "is_color_like_2": False,  # try block successful (to_rgba doesn't raise ValueError)
+    "is_color_like_3": False,  # except ValueError block
+}
+
 def is_color_like(c):
     """Return whether *c* can be interpreted as an RGB(A) color."""
-    # Special-case nth color syntax because it cannot be parsed during setup.
     if _is_nth_color(c):
+        branch_coverage_colors["is_color_like_1"] = True
         return True
     try:
         to_rgba(c)
-    except (TypeError, ValueError):
+        branch_coverage_colors["is_color_like_2"] = True
+    except ValueError:
+        branch_coverage_colors["is_color_like_3"] = True
         return False
     else:
         return True
+
+def print_coverage_colors():
+    for branch, hit in branch_coverage_colors.items():
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
+
 
 
 def _has_alpha_channel(c):
@@ -296,11 +309,6 @@ def to_rgba(c, alpha=None):
         Tuple of floats ``(r, g, b, a)``, where each channel (red, green, blue,
         alpha) can assume values between 0 and 1.
     """
-    if isinstance(c, tuple) and len(c) == 2:
-        if alpha is None:
-            c, alpha = c
-        else:
-            c = c[0]
     # Special-case nth color syntax because it should not be cached.
     if _is_nth_color(c):
         prop_cycler = mpl.rcParams['axes.prop_cycle']
@@ -330,6 +338,11 @@ def _to_rgba_no_colorcycle(c, alpha=None):
     *alpha* is ignored for the color value ``"none"`` (case-insensitive),
     which always maps to ``(0, 0, 0, 0)``.
     """
+    if isinstance(c, tuple) and len(c) == 2:
+        if alpha is None:
+            c, alpha = c
+        else:
+            c = c[0]
     if alpha is not None and not 0 <= alpha <= 1:
         raise ValueError("'alpha' must be between 0 and 1, inclusive")
     orig_c = c
