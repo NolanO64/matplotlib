@@ -395,39 +395,48 @@ class Spine(mpatches.Patch):
                     mtransforms.Affine2D().translate(0, amount)
                     + self.axes.transData)
 
-    def set_bounds(self, low=None, high=None):
-        """
-        Set the spine bounds.
 
-        Parameters
-        ----------
-        low : float or None, optional
-            The lower spine bound. Passing *None* leaves the limit unchanged.
 
-            The bounds may also be passed as the tuple (*low*, *high*) as the
-            first positional argument.
+    branch_coverage = {
+        "set_bounds_1": False,  # if self.spine_type == 'circle'
+        "set_bounds_2": False,  # if high is None and np.iterable(low)
+        "set_bounds_3": False,  # if low is None
+        "set_bounds_4": False,  # if high is None
+        }
 
-            .. ACCEPTS: (low: float, high: float)
-
-        high : float or None, optional
-            The higher spine bound. Passing *None* leaves the limit unchanged.
-        """
+    def set_bounds(self, low=None, high=None):          
+        """Set the spine bounds."""
+        global branch_coverage
+    
         if self.spine_type == 'circle':
-            raise ValueError(
-                'set_bounds() method incompatible with circular spines')
+            branch_coverage["set_bounds_1"] = True
+            raise ValueError('set_bounds() method incompatible with circular spines')
+    
         if high is None and np.iterable(low):
+            branch_coverage["set_bounds_2"] = True
             low, high = low
+    
         old_low, old_high = self.get_bounds() or (None, None)
+    
         if low is None:
+            branch_coverage["set_bounds_3"] = True
             low = old_low
+    
         if high is None:
+            branch_coverage["set_bounds_4"] = True
             high = old_high
+    
         self._bounds = (low, high)
         self.stale = True
 
     def get_bounds(self):
-        """Get the bounds of the spine."""
         return self._bounds
+
+    def print_coverage():
+        """Print the execution status of each branch in the coverage dictionary."""
+        print("Coverage Data:")
+        for branch, hit in branch_coverage.items():
+            print(f"{branch} was {'hit' if hit else 'not hit'}")
 
     @classmethod
     def linear_spine(cls, axes, spine_type, **kwargs):
