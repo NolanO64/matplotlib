@@ -48,8 +48,8 @@ def test_stackplot_colors(setup_axes):
     y2 = np.cos(x)
     colors = ['#FF0000', '#00FF00']
     stackplot(ax, x, y1, y2, colors=colors)
-    assert ax.collections[0].get_facecolor()[0][:3] == (1.0, 0.0, 0.0)
-    assert ax.collections[1].get_facecolor()[0][:3] == (0.0, 1.0, 0.0)
+    assert np.allclose(ax.collections[0].get_facecolor()[0][:3], (1.0, 0.0, 0.0))
+    assert np.allclose(ax.collections[1].get_facecolor()[0][:3], (0.0, 1.0, 0.0))
 
 def test_stackplot_hatch(setup_axes):
     ax = setup_axes
